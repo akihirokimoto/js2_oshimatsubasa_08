@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrapper">
+        <header class="header">
+            <h1 class="headertitle">To Doアプリ</h1>
+        </header>
+        <form name="addTask">
+            <input type="text" name="content" placeholder="タスクを入力してください">
+            <input type="date" name="limit">
+            <select class="priority" name="priority">
+                <option value="high">高</option>
+                <option value="normal">中</option>
+                <option value="low">低</option>
+            </select>
+            <input type="button" value="追加" id="form-btn">
+        </form>
+    </div>
+    <h3 id="divider">フィルター<i class="fas fa-filter"></i></h3>
+    <div id="selecter">
+        <div id="search" class="search">
+            <input type="text" class="search-form" name="search"  placeholder="キーワードを入力してください">
+            <button id="search-btn" class="search-btn">検索</button>
+        </div>
+        <div class="prior-detail">
+            <form name="priorSelect">
+                <input name="prior" type="radio" value="high"><span style="color:#DB4D6D;font-weight:bold;">優先度高</span>
+                <input name="prior" type="radio" value="normal"><span style="color:#00b5ad;font-weight:bold">優先度中</span>
+                <input name="prior" type="radio" value="low"><span style="color:#2EA9DF;font-weight:bold">優先度低</span>
+            </form>
+        </div>
+    </div>
+    <div id="todos" class="todos"></div>
+    
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.2/marked.min.js"></script>
+<script src="main.js"></script>
+</html>

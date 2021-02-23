@@ -1,0 +1,231 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	box-sizing: border-box;
+	outline: none;
+	font-family: 'Noto Serif', serif;
+	width: 1200px;
+	margin: 0 auto;
+	background: linear-gradient(-45deg,
+            rgba(168, 73, 122, 0.4), 
+            rgba(165, 222, 228, 0.4)) fixed, 
+            url(https://beiz.jp/images_T/white/white_00025.jpg) fixed;
+            background-size: cover;
+}
+
+#wrapper {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;  
+	margin-top: 50px;
+
+	& form {
+		display: flex;
+		width: 60%;
+		& input[type='text']{
+			box-sizing: border-box;
+			width: 80%;
+			height: 27px;
+			margin: 4px 8px 0 4px;
+			font-size: 16px;
+			color: #333;
+			border: 0;
+			border-top: none;
+			border-right: none;
+			border-bottom: 1px solid #ccc;
+			border-left: none;
+			outline: 0;
+			transition: 0.3s;
+			padding: 4px;
+			&:focus {
+				border: 1px solid #00b5ad;
+				border-top: none;
+				border-right: none;
+				border-left: none;
+			}
+		}
+		& .priority{
+			width: 15%;
+			height: 27px;
+			margin: 4px 8px 0 10px;
+			font-size: 16px;
+			color: #333;
+			border: 0;
+			border-top: none;
+			border-right: none;
+			border-bottom: 1px solid #ccc;
+			border-left: none;
+			outline: 0;
+			transition: 0.3s;
+
+			&:focus {
+				border: 1px solid #00b5ad;
+				border-top: none;
+				border-right: none;
+				border-left: none;
+			}
+		}
+		& input[type='date']{
+			box-sizing: border-box;
+			width: 30%;
+			height: 27px;
+			margin: 4px 0;
+			font-size: 16px;
+			color: #333;
+			border: 0;
+			border-top: none;
+			border-right: none;
+			border-bottom: 1px solid #ccc;
+			border-left: none;
+			outline: 0;
+			transition: 0.3s;
+			&:focus {
+				outline: transparent;
+				border-top: none;
+				border-right: none;
+				border-left: none;
+			}
+		}
+		& input[type='button']{
+			display: inline-block;
+			padding: 0.3em 1.6em;
+			font-size: 0.8em;
+			color: #333;
+			background-color: white;
+			text-decoration: none;
+			user-select: none;
+			border: 1px #333 solid;
+			border-radius: 3px;
+			transition: 0.4s ease;
+			cursor: pointer;
+			&:hover {
+				color: #00b5ad;
+				border: 1px #00b5ad solid;
+			  }
+		}
+	}
+}
+#divider {
+	margin: 10px 0 5px 34%;
+}
+#selecter {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;  
+	width: 100%;
+	& .search {
+		margin-left: 370px;
+		& .search-form {
+			box-sizing: border-box;
+				height: 27px;
+				width: 300px;
+				margin: 4px 8px 0 4px;
+				font-size: 16px;
+				color: #333;
+				border: 0;
+				border-top: none;
+				border-right: none;
+				border-bottom: 1px solid #ccc;
+				border-left: none;
+				outline: 0;
+				transition: 0.3s;
+				padding: 4px;
+				&:focus {
+					border: 1px solid #00b5ad;
+					border-top: none;
+					border-right: none;
+					border-left: none;
+				}
+		}
+		& .search-btn {
+			display: inline-block;
+			padding: 0.3em 1.6em;
+			font-size: 0.8em;
+			color: #333;
+			background-color: white;
+			text-decoration: none;
+			user-select: none;
+			border: 1px #333 solid;
+			border-radius: 3px;
+			transition: 0.4s ease;
+			cursor: pointer;
+			&:hover {
+				color: #00b5ad;
+				border: 1px #00b5ad solid;
+				}
+		}
+	}
+	& .prior-detail {
+		display: inline-block;
+		margin-right: 40px;
+		& span {
+			margin: 5px;
+		}
+	}
+}
+	
+.todos {
+	display: flex;
+	justify-content:center;
+	flex-flow: row wrap;
+	& .memo {
+	  background-color: #fff;
+	  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
+	  margin: 30px 20px;
+	  height: 300px;
+	  width: 300px;
+	  overflow: auto;
+	  & .tools {
+		color: white;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0.5rem;
+		& span {
+			margin-right: 10px;
+		}
+		& button {
+		  background-color: transparent;
+		  border: none;
+		  color: #fff;
+		  cursor: pointer;
+		  font-size: 1rem;
+		  margin-left: 0.5rem;
+		}
+	  }
+	  & .main {
+		  padding: 20px;
+		}
+	  & textarea {
+		outline: none;
+		font-family: 'Noto Serif', serif;
+		font-size: 1.2rem;
+		border: none;
+		height: 300px;
+		width: 100%;
+		padding: 20px;
+	  }
+	}
+  }
+
+// イベントトリガーで加減するCSS
+  .hidden, .filtered {
+	display: none;
+  }
+
+  .priority-input {
+	  opacity: 0;
+  }
+
+  .high-priority {
+	  background-color: #DB4D6D;
+  }
+  .normal-priority{
+	background-color:#00b5ad;
+  }
+  .low-priority {
+	  background-color: #2EA9DF;
+  }
