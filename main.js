@@ -30,7 +30,7 @@ function createTask(ary, todos, index=''){
     const memo = document.createElement('div');
     memo.classList.add('memo');
     memo.innerHTML = `
-    <div class="tools ${ary.priority === "high" ? "high-priority": (ary.priority === "normal" ? "normal-priority" : "low-priority")}">
+    <div class="tools ${ary.priority === "8a1a4f64" ? "high-priority": (ary.priority === "cd6db75e" ? "normal-priority" : "low-priority")}">
         <span>期限：${ary.date}</span>
         <span class="priority-input">${ary.priority}</span>
         <div class="edit-delete">
@@ -92,6 +92,14 @@ function editTask(main, textArea) {
     textArea.classList.toggle('hidden');
 }
 
+// フィルター解除機能
+function removeFilter() {
+    let fileteredTodo = Array.from(todos.children)
+    .forEach((todo) => {
+        todo.classList.remove('filtered');
+    });
+}
+
 // フィルター機能（単語）
 const searchTask = function(term) {
     let fileteredTodo = Array.from(todos.children)
@@ -106,6 +114,7 @@ const searchTask = function(term) {
 
 // フィルター機能（優先度）
 const sortTask = function(ele) {
+
     let fileteredTodo = Array.from(todos.children)
     .filter((todo) => {
         return !todo.innerHTML.includes(ele);
@@ -120,15 +129,17 @@ addFormEvent();
 
 document.querySelector('#search-btn').addEventListener('click', () => {
     const term = search.value.trim().toLowerCase(); 
+    removeFilter();
     searchTask(term); 
   })
 
 window.addEventListener( "DOMContentLoaded" , ()=> {
  
     document.getElementsByName("prior").forEach(
-        r => r.addEventListener("change" ,
-                 e => sortTask(e.target.value)
-            )
+        r => r.addEventListener("change" , function(e){
+            removeFilter();
+            sortTask(e.target.value)
+        })
     );
 
 });
