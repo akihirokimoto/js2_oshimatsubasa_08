@@ -12,10 +12,10 @@
 </head>
 <body>
     <div id="wrapper">
-        <header class="header">
-            <h1 class="headertitle">Post It</h1>
+        <header class="header responsive">
+            <h1 class="headertitle">To Doアプリ</h1>
         </header>
-        <form name="addTask">
+        <form name="addTask" class="responsive">
             <input type="text" name="content" placeholder="タスクを入力してください">
             <input type="date" name="limit">
             <select class="priority" name="priority">
@@ -28,11 +28,11 @@
     </div>
     <h3 id="divider">フィルター<i class="fas fa-filter"></i></h3>
     <div id="selecter">
-        <div id="search" class="search">
+        <div id="search" class="search responsive">
             <input type="text" class="search-form" name="search"  placeholder="キーワードを入力してください">
             <button id="search-btn" class="search-btn">検索</button>
         </div>
-        <div class="prior-detail">
+        <div class="prior-detail responsive">
             <form name="priorSelect">
                 <input name="prior" type="radio" value="8a1a4f64"><span style="color:#DB4D6D;font-weight:bold;">優先度高</span>
                 <input name="prior" type="radio" value="cd6db75e"><span style="color:#00b5ad;font-weight:bold">優先度中</span>

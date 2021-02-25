@@ -291,4 +291,41 @@ body {
 .low-priority {
   background-color: #2EA9DF;
 }
+
+@media screen and (max-width: 640px) {
+  body {
+    width: 640px;
+  }
+  body #wrapper {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body #wrapper .responsive {
+    width: 100%;
+  }
+  body #wrapper .responsive .headertitle {
+    text-align: center;
+  }
+  body #divider {
+    margin: 10px 0 5px 0;
+  }
+  body #selecter {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body #selecter .search {
+    margin-left: 0;
+  }
+  body #selecter .responsive {
+    width: 100%;
+    margin: 0;
+  }
+  body .todos {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  body .todos .memo {
+    margin: 15px 10px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
